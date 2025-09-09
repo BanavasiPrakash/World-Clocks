@@ -1,0 +1,148 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 8rem;
+  color: #ff1616;
+  font-family: 'Seven Segment', monospace;
+
+  margin: 0 0 3vh 0;
+  user-select: none;
+}
+
+/* Unified card container: fixed 4 columns x 3 rows grid */
+.clock-card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 32px 40px;
+  padding: 40px 48px;
+  width: 96vw;
+  height: 75vh;
+  background: #11040c;
+  border-radius: 30px;
+  box-shadow: 0 0 90px #ff161688, inset 0 0 40px #330a0a88;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Scroll inside if content overflows (optional) */
+.clock-card:hover {
+  overflow-y: auto;
+}
+
+.clock-card::-webkit-scrollbar {
+  width: 8px;
+}
+.clock-card::-webkit-scrollbar-thumb {
+  background: #551111cc;
+  border-radius: 10px;
+}
+.clock-card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Individual clock card styles - no movement or animation */
+.clock {
+  background: rgba(0, 0, 0, 0.45);
+  border: 2.5px solid #ff1616cc;
+  border-radius: 16px;
+  padding: 20px 14px;
+  box-shadow:
+    0 0 18px rgba(255, 22, 22, 0.15),
+    inset 0 0 12px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: none;
+  user-select: none;
+}
+
+/* Location title uppercase and larger */
+.clock h3 {
+  margin: 0 0 14px 0;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 11px #ff161644;
+  font-family: inherit;
+  text-transform: uppercase;
+}
+
+/* Digital time font and glow */
+.time {
+  font-family: 'Seven Segment', monospace;
+  font-size: 4.6rem;
+  color: #ff1616;
+  letter-spacing: 0.20em;
+  /* text-shadow:
+    0 0 32px #ff1616,
+    0 0 72px #ff1616,
+    0 0 140px #af1212; */
+  padding: 10px 24px;
+  border-radius: 10px;
+  min-width: 280px;
+  background: rgba(0, 0, 0, 0.25);
+  text-align: center;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+/* Remove hover or animations */
+.clock:hover,
+.continent-section:hover {
+  transform: none !important;
+  box-shadow: 0 0 18px rgba(255, 22, 22, 0.15), inset 0 0 12px rgba(0,0,0,0.4) !important;
+  cursor: default;
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Responsive: smaller font and container */
+@media (max-width: 1200px) {
+  .clock-card {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    height: auto;
+    padding: 34px 36px;
+  }
+  .time {
+    font-size: 4.4rem;
+    min-width: 230px;
+  }
+  .clock h3 {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .clock-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: unset;
+    height: auto;
+    padding: 28px 20px;
+    gap: 24px 0;
+  }
+  .time {
+    font-size: 3.6rem;
+    min-width: auto;
+  }
+  .clock h3 {
+    font-size: 1.6rem;
+  }
+}
