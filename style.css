@@ -28,9 +28,9 @@ h1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 25px 35px;
-  padding: 35px 45px;
-  width: 99vw;
+  gap: 20px 20px;
+  padding: 30px 40px;
+  width: 100vw;
   height: 78vh;
   background: #11040c;
   border-radius: 30px;
@@ -75,7 +75,7 @@ h1 {
 /* Location title uppercase and larger */
 .clock h3 {
   margin: 0 0 14px 0;
-  font-size: 2.3rem;
+  font-size: 2.2rem;
   color: #fff;
   font-weight: 900;
   letter-spacing: 0.08em;
