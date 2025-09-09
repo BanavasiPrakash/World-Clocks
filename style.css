@@ -28,10 +28,10 @@ h1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 32px 40px;
-  padding: 40px 48px;
-  width: 96vw;
-  height: 75vh;
+  gap: 25px 35px;
+  padding: 35px 45px;
+  width: 99vw;
+  height: 78vh;
   background: #11040c;
   border-radius: 30px;
   box-shadow: 0 0 90px #ff161688, inset 0 0 40px #330a0a88;
@@ -75,9 +75,9 @@ h1 {
 /* Location title uppercase and larger */
 .clock h3 {
   margin: 0 0 14px 0;
-  font-size: 3rem;
+  font-size: 2.3rem;
   color: #fff;
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 0.08em;
   text-shadow: 0 0 11px #ff161644;
   font-family: inherit;
@@ -87,7 +87,7 @@ h1 {
 /* Digital time font and glow */
 .time {
   font-family: 'Seven Segment', monospace;
-  font-size: 4.6rem;
+  font-size: 5rem;
   color: #ff1616;
   letter-spacing: 0.20em;
   /* text-shadow:
