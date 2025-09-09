@@ -88,6 +88,7 @@ h1 {
 .time {
   font-family: 'Seven Segment', monospace;
   font-size: 5rem;
+  font-weight: 900;
   color: #ff1616;
   letter-spacing: 0.20em;
   /* text-shadow:
