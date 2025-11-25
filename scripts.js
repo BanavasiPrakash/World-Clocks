@@ -1,11 +1,10 @@
 function updateClocks() {
   const clocks = document.querySelectorAll('.clock');
-  const now = new Date();
-
   clocks.forEach(clock => {
     const timezone = clock.getAttribute('data-timezone');
     const timeElement = clock.querySelector('.time');
-    const options = {
+    const now = new Date();
+    const timeOptions = {
       hour12: false,
       hour: '2-digit',
       minute: '2-digit',
@@ -13,7 +12,7 @@ function updateClocks() {
       timeZone: timezone
     };
     try {
-      const timeString = now.toLocaleTimeString('en-US', options);
+      const timeString = now.toLocaleTimeString('en-US', timeOptions);
       timeElement.textContent = timeString;
     } catch (e) {
       timeElement.textContent = "Err";
