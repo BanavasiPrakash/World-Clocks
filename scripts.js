@@ -5,7 +5,7 @@ function updateClocks() {
     const timeElement = clock.querySelector('.time');
     const now = new Date();
     const timeOptions = {
-      hour12: false,
+      hour12: true,            // <-- 12-hour format!
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
