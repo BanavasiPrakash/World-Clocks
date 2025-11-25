@@ -5,145 +5,80 @@ html, body {
   background: #000;
   color: #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  overflow: hidden;
+  overflow-x: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
   box-sizing: border-box;
 }
-
 h1 {
-  font-size: 8rem;
+  font-size: 7vw;
   color: #ff1616;
   font-family: 'Seven Segment', monospace;
-
   margin: 0 0 3vh 0;
   user-select: none;
 }
-
-/* Unified card container: fixed 4 columns x 3 rows grid */
 .clock-card {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 20px 20px;
-  padding: 30px 40px;
-  width: 100vw;
-  height: 78vh;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2vw;
+  padding: 3vw 2vw;
+  width: 96vw;
+  max-width: 1400px;
   background: #11040c;
-  border-radius: 30px;
+  border-radius: 2vw;
   box-shadow: 0 0 90px #ff161688, inset 0 0 40px #330a0a88;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: visible;
 }
-
-/* Scroll inside if content overflows (optional) */
-.clock-card:hover {
-  overflow-y: auto;
-}
-
-.clock-card::-webkit-scrollbar {
-  width: 8px;
-}
-.clock-card::-webkit-scrollbar-thumb {
-  background: #551111cc;
-  border-radius: 10px;
-}
-.clock-card::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* Individual clock card styles - no movement or animation */
 .clock {
   background: rgba(0, 0, 0, 0.45);
   border: 2.5px solid #ff1616cc;
   border-radius: 16px;
-  padding: 20px 14px;
-  box-shadow:
-    0 0 18px rgba(255, 22, 22, 0.15),
-    inset 0 0 12px rgba(0,0,0,0.4);
+  padding: 18px 8px;
+  box-shadow: 0 0 18px rgba(255, 22, 22, 0.15), inset 0 0 12px rgba(0,0,0,0.4);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: none;
+  min-width: 0;
   user-select: none;
 }
-
-/* Location title uppercase and larger */
 .clock h3 {
-  margin: 0 0 14px 0;
-  font-size: 2.2rem;
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
   color: #fff;
   font-weight: 900;
   letter-spacing: 0.08em;
   text-shadow: 0 0 11px #ff161644;
-  font-family: inherit;
   text-transform: uppercase;
 }
-
-/* Digital time font and glow */
 .time {
   font-family: 'Seven Segment', monospace;
-  font-size: 5rem;
+  font-size: 3.8rem;
   font-weight: 900;
   color: #ff1616;
-  letter-spacing: 0.20em;
-  /* text-shadow:
-    0 0 32px #ff1616,
-    0 0 72px #ff1616,
-    0 0 140px #af1212; */
-  padding: 10px 24px;
+  letter-spacing: 0.18em;
+  padding: 10px 18px;
   border-radius: 10px;
-  min-width: 280px;
+  min-width: 170px;
   background: rgba(0, 0, 0, 0.25);
   text-align: center;
   box-sizing: border-box;
   user-select: none;
 }
-
-/* Remove hover or animations */
-.clock:hover,
-.continent-section:hover {
-  transform: none !important;
-  box-shadow: 0 0 18px rgba(255, 22, 22, 0.15), inset 0 0 12px rgba(0,0,0,0.4) !important;
-  cursor: default;
-  transition: none !important;
-  animation: none !important;
-}
-
-/* Responsive: smaller font and container */
 @media (max-width: 1200px) {
-  .clock-card {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    height: auto;
-    padding: 34px 36px;
-  }
-  .time {
-    font-size: 4.4rem;
-    min-width: 230px;
-  }
-  .clock h3 {
-    font-size: 1.9rem;
-  }
+  h1 { font-size: 10vw; }
+  .clock-card { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3vw; }
+  .clock h3 { font-size: 1.3rem; }
+  .time { font-size: 2.5rem; min-width: 120px; }
 }
-
 @media (max-width: 760px) {
-  .clock-card {
-    grid-template-columns: 1fr;
-    grid-template-rows: unset;
-    height: auto;
-    padding: 28px 20px;
-    gap: 24px 0;
-  }
-  .time {
-    font-size: 3.6rem;
-    min-width: auto;
-  }
-  .clock h3 {
-    font-size: 1.6rem;
-  }
+  h1 { font-size: 11vw; }
+  .clock-card { grid-template-columns: 1fr; gap: 6vw 0; }
+  .clock h3 { font-size: 1rem; }
+  .time { font-size: 2rem; min-width: unset; }
 }
